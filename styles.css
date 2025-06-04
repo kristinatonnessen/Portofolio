@@ -13,7 +13,7 @@ header {
 }
 h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 4rem;
 }
 h2 {
     margin: 0;
@@ -93,7 +93,6 @@ main {
 }
 
 .projects {
-    display: inline-block;
     gap: 20px;
     margin-left: 200px;
     margin-right: 200px;
@@ -102,6 +101,43 @@ main {
     border-radius: 20px;
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.project-item{
+    max-width: 400px;
+    background-color: #f5f0ff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.thumbnail {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.visit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f5f0ff;
+    color: #676767;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+.visit-btn:hover {
+    background-color: #fff;
+    color: #000;
+    transition: 0.2s ease-in-out;
+}
 .contact {
     display: inline;
     padding: 30px;
@@ -117,11 +153,31 @@ main {
 footer {
     color: #676767;
     text-align: center;
-    margin-top: 40px;
+    margin: 10px;
+}
+footer p {
+    font-size: 1.0em;
 }
 
-.footer-logo {
-    margin: 10px 0;
-    max-width: 100%;
-    height: auto;
+
+@media screen and (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-image {
+        max-width: 100%;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .projects {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .skills p, .contact p {
+        margin: 20px;
+        font-size: 1.2em;
+    }
+    
 }
