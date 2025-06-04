@@ -94,11 +94,10 @@ main {
 
 .projects {
     gap: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 10px;
-    text-align: start;
-    border-radius: 20px;
+    text-align: center;
 }
 
 .project-grid {
@@ -125,12 +124,11 @@ main {
 
 .visit-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: #f5f0ff;
     color: #676767;
     text-decoration: none;
     border-radius: 20px;
-    margin-top: 10px;
 
 }
 .visit-btn:hover {
