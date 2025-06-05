@@ -1,9 +1,24 @@
+const text = "My name is Kristina, and I am a Front-End Developer";
+const typingTarget = document.getElementById("typing-target");
+let index = 0;
+
+function type() {
+  if (index < text.length) {
+    typingTarget.textContent += text.charAt(index);
+    index++;
+    setTimeout(type, 40);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", type);
+
+
 const projects = [
   {
     title: "RainyDays",
     description: "An online shopping site for outdoor enthusiasts.",
     image: "images/thumb-rainydays.png",
-    liveLink: "https://rainydayskristina.netlify.app/",
+    liveLink: "https://kristinatonnessen.github.io/Rainydays/",
     repoLink: "https://github.com/kristinatonnessen/RainyDays"
   },
   {
@@ -57,7 +72,7 @@ document.querySelectorAll(".project-item").forEach(card => {
 });
 document.querySelectorAll(".thumbnail").forEach(thumbnail => {
   thumbnail.addEventListener("mouseenter", () => {
-    thumbnail.style.transform = "scale(1.05)";
+    thumbnail.style.transform = "scale(1.16)";
     thumbnail.style.transition = "transform 0.3s ease";
   });
   thumbnail.addEventListener("mouseleave", () => {
@@ -70,7 +85,7 @@ document.querySelectorAll(".visit-btn").forEach(button => {
     button.style.color = "#000";
   });
   button.addEventListener("mouseleave", () => {
-    button.style.backgroundColor = "#f5f0ff";
+    button.style.backgroundColor = "#7c4dff00";
     button.style.color = "#676767";
   });
 });

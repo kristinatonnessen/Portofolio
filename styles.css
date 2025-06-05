@@ -6,14 +6,14 @@ body {
 }
 
 header {
-    background: #f5f0ff;
+    background: #7c4dff48;
     color: #fff;
     padding: 10px 0;
     text-align: center;
 }
 h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 h2 {
     margin: 0;
@@ -46,21 +46,54 @@ nav ul li a {
 }
 
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    align-items: center;
-    padding: 20px;
-    margin-right: 50px;
-    margin-left: 50px;
-    text-align: center;
-    border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.hero-image {
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.263);
+  animation: float 4s ease-in-out infinite;
 }
+
+.hero-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.typing-text {
+  font-size: 2rem;
+  color: #7c4dff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #7c4dff;
+  animation: blink 0.75s step-end infinite;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #7c4dff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.cta-btn:hover {
+  background: #651fff;
+}
+
+
 
 .skills-container {
   display: flex;
@@ -68,7 +101,7 @@ nav ul li a {
   gap: 20px;
   padding: 1.5rem;
   flex-wrap: wrap;  
-  background: #f5f0ff;
+  background: #7c4dff48;
 }
 
 .skill-item {
@@ -85,11 +118,15 @@ nav ul li a {
     align-items: center;
     padding: 50px;
     margin: 50px;
-    border: 2px solid #f5f0ff;
+    border: 2px solid #7c4dff48;
     text-align: start;
     border-radius: 20px;
 }
-
+.abt-img  {
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+}
 .projects {
   max-width: 1200px;
   margin: 0 auto;
@@ -106,7 +143,7 @@ nav ul li a {
 
 .project-item{
     max-width: 400px;
-    background-color: #f5f0ff;
+    background-color: #7c4dff48;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -121,7 +158,6 @@ nav ul li a {
 .visit-btn {
     display: inline-block;
     padding: 5px 15px;
-    background-color: #f5f0ff;
     color: #676767;
     text-decoration: none;
     border-radius: 20px;
@@ -136,7 +172,7 @@ nav ul li a {
   gap: 20px;
   padding: 1.5rem;
   flex-wrap: wrap;  
-  background: #f5f0ff;
+  background: #7c4dff48;
 }
 
 footer {
@@ -148,33 +184,72 @@ footer p {
     font-size: 1.0em;
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #7c4dff; }
+}
+
 
 @media screen and (max-width: 768px) {
     .logo-header img {
         max-width: 300px;
     }
-    .hero {
+     .hero {
+        max-width: 90%;
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 40px 20px;
     }
-    .hero-image {
-        max-width: 100%;
+    .hero-image img {
+
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
     }
-    h1 {
-        font-size: 2.5rem;
+    .typing-text {
+        font-size: 1.5rem;
+        max-width: 90%;
+        margin: 0 auto;
+        white-space: normal;         
+        overflow-wrap: break-word;   
+        word-break: break-word;
+        border-right: 2px solid #7c4dff;
+        animation: blink 0.75s step-end infinite;
     }
     .about {
         grid-template-columns: 1fr;
         text-align: justify;
-        padding: 20px;
+        padding: 10px;
+    }
+    .abt-img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
     }
     .projects {
         display: inline;
+        text-align: center;
     }
-    .skills p, .contact p {
+    .contact p {
         margin: 20px;
         font-size: 1.2em;
         letter-spacing: normal;
     }
-    
+    .skill-item{
+        font-size: 1.0rem;
+        padding: 5px 10px;
+    }
 }
