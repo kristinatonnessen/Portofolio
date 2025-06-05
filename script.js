@@ -1,4 +1,4 @@
-const text = "My name is Kristina, and I am a Front-End Developer";
+const text = "My name´s Kristina, and I am a Front-End Developer";
 const typingTarget = document.getElementById("typing-target");
 let index = 0;
 
@@ -6,7 +6,7 @@ function type() {
   if (index < text.length) {
     typingTarget.textContent += text.charAt(index);
     index++;
-    setTimeout(type, 40);
+    setTimeout(type, 25);
   }
 }
 
