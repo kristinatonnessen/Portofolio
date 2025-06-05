@@ -26,7 +26,7 @@ p {
 }
 
 .logo-header img {
-    max-width: 500px;
+    max-width: 600px;
     height: auto;
 }
 
@@ -45,9 +45,6 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
-}
 .hero {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -60,44 +57,43 @@ main {
     border-radius: 20px;
 }
 .hero-image {
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
     border-radius: 20px;
 }
 
-.skills {
-    display: inline;
-    margin-top: 10px;
-    text-align: center;
-    background-color: #f5f0ff;
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 1.5rem;
+  flex-wrap: wrap;  
+  background: #f5f0ff;
 }
-.skills p{
-    background-color: #f5f0ff;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 50px;
-    margin-top: 10px;
-    font-size: 1.5em;
-}
+
+.skill-item {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* smooth ease out */
+  will-change: transform; /* helps performance */}
+
 .about {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 20px;
     align-items: center;
-    padding: 30px;
-    margin-right: 50px;
-    margin-left: 50px;
+    padding: 50px;
+    margin: 50px;
     border: 2px solid #f5f0ff;
-    text-align: center;
+    text-align: start;
     border-radius: 20px;
 }
 
 .projects {
-    gap: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 10px;
-    text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .project-grid {
@@ -117,7 +113,7 @@ main {
 }
 
 .thumbnail {
-    max-width: 80%;
+    max-width: 80%;    
     height: auto;
     border-radius: 10px;
 }
@@ -132,26 +128,21 @@ main {
 
 }
 .visit-btn:hover {
-    background-color: #fff;
-    color: #000;
     transition: 0.2s ease-in-out;
 }
 .contact {
-    display: inline;
-    padding: 30px;
-    text-align: center;
-    border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 1.5rem;
+  flex-wrap: wrap;  
+  background: #f5f0ff;
 }
-.contact p{
-    background-color: #f5f0ff;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 50px;
-}
+
 footer {
     color: #676767;
     text-align: center;
-    margin: 10px;
+    margin-top: 50px;
 }
 footer p {
     font-size: 1.0em;
@@ -159,6 +150,9 @@ footer p {
 
 
 @media screen and (max-width: 768px) {
+    .logo-header img {
+        max-width: 300px;
+    }
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
@@ -166,16 +160,21 @@ footer p {
     .hero-image {
         max-width: 100%;
     }
+    h1 {
+        font-size: 2.5rem;
+    }
     .about {
         grid-template-columns: 1fr;
+        text-align: justify;
+        padding: 20px;
     }
     .projects {
-        margin-left: 20px;
-        margin-right: 20px;
+        display: inline;
     }
     .skills p, .contact p {
         margin: 20px;
         font-size: 1.2em;
+        letter-spacing: normal;
     }
     
 }
