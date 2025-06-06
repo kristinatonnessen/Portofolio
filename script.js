@@ -1,4 +1,4 @@
-const text = "My name´s Kristina, and I am a Front-End Developer";
+const text = "My name's Kristina, and I'm a Front-End Developer";
 const typingTarget = document.getElementById("typing-target");
 let index = 0;
 
